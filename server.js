@@ -1,43 +1,25 @@
-// 'use strict';
-
-const request = require('request');
-
-
-// Replace <Subscription Key> with your valid subscription key.
-const subscriptionKey = '9dc68c94854f4ee192f689619dda5b93';
-
-// You must use the same location in your REST call as you used to get your
-// subscription keys. For example, if you got your subscription keys from
-// westus, replace "westcentralus" in the URL below with "westus".
-const uriBase =
-    "https://eastus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Categories&language=en";
-
-const imageUrl =
-    "https://article.images.consumerreports.org/prod/content/dam/CRO%20Images%202018/Health/June/CR-Health-InlineHero-Foods-That-Are-Healthier-Cooked-09-17";
-
-// Request parameters.
-const params = {
-    'visualFeatures': 'Categories,Description,Color',
-    'details': '',
-    'language': 'en'
-};
-
-const options = {
-    uri: uriBase,
-    qs: params,
-    body: '{"url": ' + '"' + imageUrl + '"}',
-    headers: {
-        'Content-Type': 'application/json',
-        'Ocp-Apim-Subscription-Key' : subscriptionKey
-    }
-};
-
-request.post(options, (error, response, body) => {
-  if (error) {
-    console.log('Error: ', error);
-    return;
-  }
-  let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
-  console.log('JSON Response\n');
-  console.log(jsonResponse);
+const express = require("express");
+const bodyParser = require("body-parser");
+const logger = require("morgan");
+const Cors = require("cors");
+// const routes = require("./routes");
+// const mongoose = require("mongoose");
+const app = express();
+const PORT = process.env.PORT || 3000;
+// Define middleware here
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(logger('dev'));
+app.use(Cors);
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+// Add routes, both API and view
+app.use(routes);
+// Connect to the Mongo DB
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/");
+// Start the API server
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
