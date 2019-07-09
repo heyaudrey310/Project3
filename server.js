@@ -11,14 +11,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 app.use(Cors);
-// Serve up static assets (usually on heroku)
+//Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // Add routes, both API and view
 app.use(routes);
 // Connect to the Mongo DB
- mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/whatthefruit");
+ mongoose.connect(process.env.MONGODB_URI || "mongodb://whatthefruit:Aa03101990*@ds249267.mlab.com:49267/heroku_3jw23km5");
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
