@@ -1,9 +1,9 @@
 import React from 'react';
 // import logo from './logo.svg';
-import './App.css';
-import './components/form/form';
+import '../../../src/App.css';
+import '../form/form';
 
-function App() {
+function Home() {
   return (
     <div className="App">
     <div idname="root"></div>
@@ -25,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
