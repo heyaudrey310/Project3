@@ -1,7 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 import '../../../src/App.css';
-import '../form/form';
+import '../Form/Form';
 
 function Home() {
   return (
@@ -9,9 +9,10 @@ function Home() {
     <div idname="root"></div>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1> What The Fruit</h1>
+        <button className="btn btn-primary" onClick={this.handleIncrement}>
+            Start Scanning Fruit
+          </button>
         <a
           className="App-link"
           href="https://reactjs.org"
