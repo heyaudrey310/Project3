@@ -10,14 +10,14 @@ router.get("/recipeData", (req, res) => {
 
 router.get("/nutritionData", (req, res) => {
     axios
-      .get("https://us.openfoodfacts.org/", { params: req.query })
+      .get("https://world.openfoodfacts.org/api/v0/product/[barcode].json", { params: req.query })
       .then(({ data: { results } }) => res.json(results))
       .catch(err => res.status(422).json(err));
   });
 
   router.get("/analyzeData", (req, res) => {
     axios
-      .get("", { params: req.query })
+      .get("https://portal.azure.com/#home", { params: req.query })
       .then(({ data: { results } }) => res.json(results))
       .catch(err => res.status(422).json(err));
   });
