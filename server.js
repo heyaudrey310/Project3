@@ -7,14 +7,15 @@ const cors = require("cors");
 const apiRoutes = require("./routes/apiRoutes");
 const db = require("./models");
 
-const Schema = mongoose.Schema; 
+const mongoose = require("mongoose");
+//const Schema = mongoose.Schema; 
 const fs = require("fs");
 const multer =require("multer");
 
 
 
 // const routes = require("./routes");
-const mongoose = require("mongoose");
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -35,8 +36,8 @@ if (process.env.NODE_ENV === "production") {
 
 // Routes
 // *************************************
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+//require("./routes/apiRoutes")(app);
+//require("./routes/htmlRoutes")(app);
 
 //API Routes
 //**************************************** */
@@ -44,7 +45,10 @@ require('dotenv').config();
 
 // Connect to the Mongo DB
 // ****************************
- mongoose.connect(process.env.MONGODB_URI || "mongodb://whatthefruit:Aa03101990*@ds249267.mlab.com:49267/heroku_3jw23km5");
+ mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/whatthefruit");
+  //"mongodb://whatthefruit:Aa03101990*@ds249267.mlab.com:49267/heroku_3jw23km5");
+
+
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
