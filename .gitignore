@@ -10,6 +10,7 @@ node_modules
 # production
 /build
 # misc
+client/.env
 .DS_Store
 .env
 .env.local
