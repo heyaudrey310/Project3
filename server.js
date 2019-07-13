@@ -7,6 +7,10 @@ const cors = require("cors");
 const apiRoutes = require("./routes/apiRoutes");
 const db = require("./models");
 
+const Schema = mongoose.Schema; 
+const fs = require("fs");
+const multer =require("multer");
+
 
 
 // const routes = require("./routes");
