@@ -1,9 +1,10 @@
 'use strict';
 
 const request = require('request');
+require('dotenv').config()
 
 // Replace <Subscription Key> with your valid subscription key.
-const subscriptionKey = '9dc68c94854f4ee192f689619dda5b93';
+const subscriptionKey = process.env.REACT_APP_MICROSOFT_AZURE_API_KEY;
 
 // You must use the same location in your REST call as you used to get your
 // subscription keys. For example, if you got your subscription keys from
