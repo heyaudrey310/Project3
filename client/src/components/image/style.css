@@ -1,0 +1,19 @@
+body{
+    background: linear-gradient(115deg, #fdcd3b 60%, #ffed4b 60%);
+}
+#root{
+    margin-top: 15%;
+    text-align: center;
+    
+}
+h1{
+
+}
+
+h2{
+font-size: 5px;
+}
+
+.button{
+     border-radius: 50%;
+}
