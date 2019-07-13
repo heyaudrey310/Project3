@@ -12,6 +12,7 @@ const fs = require("fs");
 const multer =require("multer");
 
 
+
 // const routes = require("./routes");
 const mongoose = require("mongoose");
 const app = express();
@@ -36,6 +37,10 @@ if (process.env.NODE_ENV === "production") {
 // *************************************
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+
+//API Routes
+//**************************************** */
+require('dotenv').config();
 
 // Connect to the Mongo DB
 // ****************************
