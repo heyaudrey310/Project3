@@ -6,11 +6,16 @@ const canvas = window.canvas = document.querySelector('canvas');
 canvas.width = 480;
 canvas.height = 360;
 
-const button = document.querySelector('button');
-button.onclick = function() {
+const button = document.querySelector("#camera--trigger");
+button.onclick = function(event) {
+  event.preventDefault()
+  // console.log("Hello")
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
   canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+  const data = canvas.toDataURL('image/png');
+  document.querySelector("#camera--output").setAttribute('src', data);
+  console.log(document.querySelector("#camera--output").getAttribute("src"))
 };
 
 const constraints = {
