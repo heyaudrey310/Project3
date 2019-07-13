@@ -9,10 +9,6 @@ class Image extends Component{
             video: true
           };
         navigator.mediaDevices.getUserMedia(constraints).then(this.handleSuccess).catch(this.handleError);
-        // const video = document.querySelector('video');
-        // const canvas = window.canvas = document.querySelector('canvas');
-        // canvas.width = 480;
-        // canvas.height = 360;
     }
 
     handleError = (error) => {
