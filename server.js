@@ -17,7 +17,7 @@ const multer =require("multer");
 // const routes = require("./routes");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Define Middleware here
 // ************************************
@@ -46,6 +46,7 @@ require('dotenv').config();
 // Connect to the Mongo DB
 // ****************************
  mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/whatthefruit");
+  //  mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/fruitimage");
   //"mongodb://whatthefruit:Aa03101990*@ds249267.mlab.com:49267/heroku_3jw23km5");
 
 
