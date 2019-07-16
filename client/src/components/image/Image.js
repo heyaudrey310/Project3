@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import "../image/style.css";
+import API from "../../utils/api"
+
 
 class Image extends Component{
+
+    state = {
+        image: null,
+    }
 
     componentDidMount(){
         const constraints = {
@@ -33,7 +39,22 @@ class Image extends Component{
         canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
         const data = canvas.toDataURL('image/png');
         document.querySelector("#camera--output").setAttribute('src', data);
+        this.setState({image: data})
         console.log(document.querySelector("#camera--output").getAttribute("src"))
+    }
+
+    sendImage = (event) => {
+        event.preventDefault()
+        console.log("Hello")
+        API.storeImage(this.state.image)
+            .then(res => this.setState({ image: res.data }))
+            .catch(err => console.log(err));
+        // const canvas = window.canvas = document.querySelector('canvas');
+        // const data = canvas.toDataURL('image/png');
+        // push.document.querySelector("#camera--output").getAttribute("src")
+        
+        // handle image submit function 
+        // post
     }
 
     render (){
@@ -47,6 +68,7 @@ class Image extends Component{
                             <canvas id="camera--sensor"></canvas>
                             <img src="//:0" alt="" id="camera--output"/>
                             <button id="camera--trigger" type="button" onClick={this.takePicture}>Scan Fruits</button>
+                            <button id="send--image" type="submit" onClick={this.sendImage}>Get Nutrition</button>
                         </main>
                     </div>
                 </form>

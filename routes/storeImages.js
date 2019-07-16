@@ -1,12 +1,12 @@
 
 module.exports = function(app) {
-    // const fs = require('fs')
+    const fs = require('fs')
     const path = require('path')
     const multer = require('multer')
   
     const storage = multer.diskStorage({
       destination: function(req, file, cb) {
-        const uploadsDir = path.join(__dirname, '..', '..', 'public')
+        const uploadsDir = path.join(__dirname, '..', '..', 'public', `${Date.now()}`)
         fs.mkdirSync(uploadsDir)
         cb(null, uploadsDir)
       },
@@ -25,6 +25,6 @@ module.exports = function(app) {
   
     app.route('/storeImages/:id')
        .get(controller.show)
-       .put(controller.update)
+      //  .put(controller.update)
       //  .delete(controller.destroy)
   }

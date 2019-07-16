@@ -1,57 +1,51 @@
 // Dependencies
 // ***********************************
 const express = require("express");
-const bodyParser = require("body-parser");
+const path = require("path");
 const logger = require("morgan");
-const cors = require("cors");
-const apiRoutes = require("./routes/apiRoutes");
-const db = require("./models");
 
 const mongoose = require("mongoose");
-//const Schema = mongoose.Schema; 
-const fs = require("fs");
-const multer =require("multer");
+// const db = require("./models");
 
 
-
-// const routes = require("./routes");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
+
+
 
 // Define Middleware here
 // ************************************
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(express.static("public"));
-app.use(cors);
-
-//Serve up static assets (usually on HEROKU)
-// **********************************************
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
+app.use(express.json({limit: '50mb'}));
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
 // Add routes, both API and view
- app.use("/api", apiRoutes);
+require("./routes/apiRoutes")(app);
 
 // Routes
 // *************************************
-//require("./routes/apiRoutes")(app);
-//require("./routes/htmlRoutes")(app);
 
-//API Routes
-//**************************************** */
-require('dotenv').config();
+// require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
+
+
+// Remember, Ed typed this....
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+})
 
 // Connect to the Mongo DB
 // ****************************
- mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/whatthefruit");
-  //"mongodb://whatthefruit:Aa03101990*@ds249267.mlab.com:49267/heroku_3jw23km5");
+
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://whatthefruit:Aa03101990*@ds249267.mlab.com:49267/heroku_3jw23km5"
+);
 
 
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
-
-module.exports = app;
