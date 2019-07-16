@@ -3,8 +3,10 @@
 const express = require("express");
 const path = require("path");
 const logger = require("morgan");
+
 const mongoose = require("mongoose");
 // const db = require("./models");
+
 
 
 const app = express();
@@ -25,8 +27,10 @@ require("./routes/apiRoutes")(app);
 
 // Routes
 // *************************************
+
 // require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+
 
 // Remember, Ed typed this....
 app.get("*", (req, res) => {
@@ -35,9 +39,11 @@ app.get("*", (req, res) => {
 
 // Connect to the Mongo DB
 // ****************************
+
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://whatthefruit:Aa03101990*@ds249267.mlab.com:49267/heroku_3jw23km5"
 );
+
 
 // Start the API server
 app.listen(PORT, function() {

@@ -4,6 +4,9 @@ import Form from "./Form";
 // import image from "../image";
 
 
+console.log(process.env.REACT_APP_RECIPE_API_KEY);
+console.log(process.env.REACT_APP_MICROSOFT_AZURE_API_KEY);
+
 function App() {
     return (
         <div>
