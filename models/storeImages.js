@@ -7,9 +7,14 @@ const imageSchema = new Schema ({
         type: mongoose.Schema.ObjectId, required:true },
     path: {
         type: String, required: true },
-    label: { type: String, required: true },
+    // label: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now},
 });
 
-const SearchImage = mongoose.model("Image", imageSchema );
+// const SearchImage = mongoose.model("Image", imageSchema );
 
-module.exports = SearchImage; 
+// module.exports = SearchImage; 
+
+
+
+module.exports = mongoose.model('Image', imageSchema)

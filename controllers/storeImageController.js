@@ -1,6 +1,6 @@
 
 
-const storeImages = require('../models/savedImage')
+const storeImages = require('../models/storeImages')
 
 exports.index = function(req, res) {
     storeImages.find({storeImagesId: req.params.storeImages_id}, function (err, image) {
@@ -9,20 +9,25 @@ exports.index = function(req, res) {
     })
 }
 
+
 exports.show = function(req, res) {
-    storeImages.find(id, function (err, image) {
+    storeImages.findbyId(req.params.id)
+        .populate('images')
+        .exec(function (err, image) {
         if (err) res.send(err)
         res.json(image)
     })
 }
 
+// storeImages.find(req.params.id, function (err, image) {
+ 
 // Multer get placed on req here in file
 exports.create = function(req, res) {
     const path = require('path')
     const remove = path.join(__dirname, '..', '..', 'public')
     const relPath = req.file.path.replace(remove, '')
     const newImage = new Image(req.body)
-    newImage.saveImageId = req.params.saveImage_id
+    newImage.storeImagesId = req.params.storeImages_id
     newImage.path = relPath 
     newImage.save(function(err, image) {
         if (err) res.send(err)
