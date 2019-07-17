@@ -46,7 +46,10 @@ class Image extends Component{
     sendImage = (event) => {
         event.preventDefault()
         console.log("Hello")
-        API.storeImage(this.state.image)
+        const blob = new Blob([this.state.image], {type: 'image/png'});
+        const url = URL.createObjectURL(blob);
+        console.log(url, "WORK")
+        API.storeImage(url)
             .then(res => this.setState({ image: res.data }))
             .catch(err => console.log(err));
         // const canvas = window.canvas = document.querySelector('canvas');
