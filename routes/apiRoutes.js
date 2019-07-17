@@ -10,19 +10,6 @@ module.exports = function(app) {
   })
 
 
-<<<<<<< HEAD
-const recipeKey = process.env.REACT_APP_RECIPE_API_KEY;
-const imageKey = process.env.REACT_APP_MICROSOFT_AZURE_API_KEY;
-const nutJson = "./assets/nutrition.json";
-const input = [];
-
-router.get("/recipeData", (req, res) => {
-  axios
-    .get("https://www.food2fork.com/api/get" + recipeKey, { params: req.query })
-    .then(({ data: { results } }) => res.json(results))
-    // console.log(response);
-    .catch(err => res.status(422).json(err));
-=======
   app.post("/api/storeImage", (req, res) => {
     console.log("In storeImage")
     const base64Data = req.body.imgBase64.replace(/^data:image\/jpeg;base64,/, "");
@@ -62,7 +49,6 @@ request.post(options, (error, response, body) => {
   console.log('JSON Response\n');
   console.log(jsonResponse);
   res.json(jsonResponse)
->>>>>>> 4725b8e69a59078b4c1bc7cfa1084f57f25dd23b
 });
     // const  path = "." + req.body.fileName;
     // fs.writeFile(path, base64Data, "base64", function(err) {
@@ -102,21 +88,5 @@ request.post(options, (error, response, body) => {
 //       .catch(err => res.status(422).json(err));
 //   });
 
-<<<<<<< HEAD
-router.get("/nutritionData", (req, res) => {
-    axios
-      .get("https://world.openfoodfacts.org/" + nutJson, { params: req.query })
-      .then(({ data: { results } }) => res.json(results))
-      .catch(err => res.status(422).json(err));
-  });
-
-  router.get("/analyzeData", (req, res) => {
-    axios
-      .get("https://eastus.api.cognitive.microsoft.com/" + imageKey, { params: req.query })
-      .then(({ data: { results } }) => res.json(results))
-      .catch(err => res.status(422).json(err));
-  });
-=======
->>>>>>> 4725b8e69a59078b4c1bc7cfa1084f57f25dd23b
   
 

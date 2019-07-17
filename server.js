@@ -12,11 +12,8 @@ const mongoose = require("mongoose");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 4725b8e69a59078b4c1bc7cfa1084f57f25dd23b
 
 // Define Middleware here
 // ************************************
@@ -43,16 +40,10 @@ app.get("*", (req, res) => {
 
 // Connect to the Mongo DB
 // ****************************
-<<<<<<< HEAD
- mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/whatthefruit");
-  //  mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/fruitimage");
-  //"mongodb://whatthefruit:Aa03101990*@ds249267.mlab.com:49267/heroku_3jw23km5");
-=======
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://whatthefruit:Aa03101990*@ds249267.mlab.com:49267/heroku_3jw23km5"
 );
->>>>>>> 4725b8e69a59078b4c1bc7cfa1084f57f25dd23b
 
 
 // Start the API server
