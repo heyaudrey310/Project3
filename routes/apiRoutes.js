@@ -13,6 +13,10 @@ module.exports = function(app) {
   app.post("/api/storeImage", (req, res) => {
     console.log("In storeImage")
     const base64Data = req.body.imgBase64.replace(/^data:image\/jpeg;base64,/, "");
+    const buf = Buffer.from(base64Data, 'base64');
+    const blob = new Blob([base64Data], {type: 'image/png'});
+    const url = URL.createObjectURL(blob);
+    console.log(url)
     // console.log(base64Data);
 
     const subscriptionKey = process.env.REACT_APP_MICROSOFT_AZURE_API_KEY;
@@ -21,8 +25,7 @@ module.exports = function(app) {
     'https://eastus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Categories&language=en';
 
     const imageUrl =
-    'https://article.images.consumerreports.org/prod/content/dam/CRO%20Images%202018/Health/June/CR-Health-InlineHero-Foods-That-Are-Healthier-Cooked-09-17';
-
+    'https://project003.blob.core.windows.net/whatthefruit-container/lemons-and-limes.jpg';
     // Request parameters.
     const params = {
         'visualFeatures': 'Categories,Description,Color',
@@ -30,7 +33,7 @@ module.exports = function(app) {
         'language': 'en'
     };
 
-    const options = {
+  const options = {
     uri: uriBase,
     qs: params,
     body: '{"url": ' + '"' + imageUrl + '"}',

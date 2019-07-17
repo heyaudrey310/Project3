@@ -46,7 +46,10 @@ class Image extends Component{
     sendImage = (event) => {
         event.preventDefault()
         console.log("Hello")
-        API.storeImage(this.state.image)
+        const blob = new Blob([this.state.image], {type: 'image/png'});
+        const url = URL.createObjectURL(blob);
+        console.log(url, "WORK")
+        API.storeImage(url)
             .then(res => this.setState({ image: res.data }))
             .catch(err => console.log(err));
         // const canvas = window.canvas = document.querySelector('canvas');
@@ -63,20 +66,22 @@ class Image extends Component{
 
                 <form className="box" enctype="multipart/form-data">
                     <div className="image">
-                        <main id="camera">
-                            <video id="camera--view" autoPlay playsInLine></video>
-                            <canvas id="camera--sensor"></canvas>
-                            <img src="//:0" alt="" id="camera--output"/>
-                            <button id="camera--trigger" type="button" onClick={this.takePicture}>Scan Fruits</button>
-                            <button id="send--image" type="submit" onClick={this.sendImage}>Get Nutrition</button>
-                        </main>
+                            <div class="photos">
+                            <main id="camera">
+                                <video id="camera--view" autoPlay playsInLine></video>
+                                <canvas id="camera--sensor"></canvas>
+                                <img src="//:0" alt="" id="camera--output"/>
+                                <button id="camera--trigger" type="button" onClick={this.takePicture}>Scan Fruits</button>
+                                <button id="send--image" type="submit" onClick={this.sendImage}>Get Nutrition</button>
+                            </main>
+                            </div>
                     </div>
                 </form>
             
 
             </div>
         );
-        }
     }
+}
 
 export default Image;

@@ -1,19 +1,86 @@
+.Logo{
+    width: 100%;
+}
+
 body{
-    background: linear-gradient(115deg, #fdcd3b 60%, #ffed4b 60%);
+    /* background: linear-gradient(115deg, #fdcd3b 60%, #ffed4b 60%); */
+    background-image: url(../../assets/images/lemons-and-limes.jpg);
+    background-color: #949693;
+    /* margin-bottom: 20%;  */
+    height: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+      /* opacity: 0.5;
+    filter: alpha(opacity=50); */
+    
+    
+}
+
+#camera--trigger{
+    background-color: #FAC9B8;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left:40%;
+    /* margin-bottom: 30%; */
+}
+
+#send--image{
+    background-color: #C06E52; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 5px;
 }
 #root{
-    margin-top: 15%;
+    margin-top: 30%;
     text-align: center;
     
 }
-/* h1{
+.title{
+    margin: auto;
+    color:white;
+    z-index: inherit;
+    font-size: 150px;
+    font-family: 'Arial';
+    border-style: solid;
+    border-width: 5px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
+
+.photos {
+    margin: auto;
+    margin-top: 60%;
+    width: 50%;
+    height: 100px;
+    padding: 20px;
+    align-content: center;
+}
+h1{
+    font-size:50px;
+    margin:10%;
+}
+
+/* h2{
+font-size: 5px;
+z-index: -1;
 } */
 
-h2{
-font-size: 5px;
-}
-
-.button{
+/* .button{
      border-radius: 50%;
-}
+} */
