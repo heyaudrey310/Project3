@@ -1,10 +1,15 @@
 // Dependencies
 // ***********************************
 
+<<<<<<< HEAD
+=======
+require('dotenv').config();
+>>>>>>> 8ac0f468036e8ef74cf66ed114014b0f183f8523
 const express = require("express");
 const path = require("path");
 const logger = require("morgan");
 const request = require("request");
+
 
 const mongoose = require("mongoose");
 // const db = require("./models");
