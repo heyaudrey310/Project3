@@ -17,20 +17,20 @@ module.exports = function(app) {
 
     const subscriptionKey = process.env.REACT_APP_MICROSOFT_AZURE_API_KEY;
     console.log(subscriptionKey)
-const uriBase =
+    const uriBase =
     'https://eastus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Categories&language=en';
 
-const imageUrl =
+    const imageUrl =
     'https://article.images.consumerreports.org/prod/content/dam/CRO%20Images%202018/Health/June/CR-Health-InlineHero-Foods-That-Are-Healthier-Cooked-09-17';
 
-// Request parameters.
-const params = {
-    'visualFeatures': 'Categories,Description,Color',
-    'details': '',
-    'language': 'en'
-};
+    // Request parameters.
+    const params = {
+        'visualFeatures': 'Categories,Description,Color',
+        'details': '',
+        'language': 'en'
+    };
 
-const options = {
+    const options = {
     uri: uriBase,
     qs: params,
     body: '{"url": ' + '"' + imageUrl + '"}',
