@@ -1,3 +1,4 @@
+
 const request = require("request");
 require('dotenv').config();
 const blobpolyfill = require("blob-polyfill")
@@ -56,6 +57,7 @@ request.post(options, (error, response, body) => {
   console.log(req.body.url);
   res.json(jsonResponse)
 });
+
     // const  path = "." + req.body.fileName;
     // fs.writeFile(path, base64Data, "base64", function(err) {
     // if (err) {
@@ -68,8 +70,8 @@ request.post(options, (error, response, body) => {
 //npm pagckage uuid
 
 
-  })
-}
+//   });
+// };
 
 
 
