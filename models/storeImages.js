@@ -11,10 +11,9 @@ const imageSchema = new Schema ({
     createdAt: { type: Date, default: Date.now},
 });
 
+
+module.exports = mongoose.model('Image', imageSchema)
+
 // const SearchImage = mongoose.model("Image", imageSchema );
 
 // module.exports = SearchImage; 
-
-
-
-module.exports = mongoose.model('Image', imageSchema)

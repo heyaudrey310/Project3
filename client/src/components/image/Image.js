@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "../image/style.css";
-import API from "../../utils/api"
+import API from "../../utils/api";
+import { arrayBufferToBlob } from "blob-util";
+// import { canvasToBlob } from 'blob-util';
 
 
 class Image extends Component{
@@ -46,12 +48,14 @@ class Image extends Component{
     sendImage = (event) => {
         event.preventDefault()
         console.log("Hello")
+        // const Blob = arrayBufferToBlob;
         const blob = new Blob([this.state.image], {type: 'image/png'});
         const url = URL.createObjectURL(blob);
         console.log(url, "WORK")
         API.storeImage(url)
-            .then(res => this.setState({ image: res.data }))
+            // .then(res => this.setState({ image: res.data }))
             .catch(err => console.log(err));
+            console.log("store")
         // const canvas = window.canvas = document.querySelector('canvas');
         // const data = canvas.toDataURL('image/png');
         // push.document.querySelector("#camera--output").getAttribute("src")
@@ -59,6 +63,20 @@ class Image extends Component{
         // handle image submit function 
         // post
     }
+
+    // convertBlob = (event) => {
+    //     const img = document.getElementById('kirby');
+    //     const blobUtil = 
+
+    //     blobUtil.imgSrcToBlob(img.src).then(function (blob) {
+    //     const blobURL = blobUtil.createObjectURL(blob);
+
+    //     const newImg = document.createElement('img');
+    //     newImg.src = blobURL;
+
+    //     img.parentNode.appendChild(newImg);
+    // });
+    // }
 
     render (){
         return(

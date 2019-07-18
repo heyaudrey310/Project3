@@ -14,6 +14,7 @@ module.exports = function(app) {
     console.log("In storeImage")
     const base64Data = req.body.imgBase64.replace(/^data:image\/jpeg;base64,/, "");
     const buf = Buffer.from(base64Data, 'base64');
+    const Blob = arrayBufferToBlob;
     const blob = new Blob([base64Data], {type: 'image/png'});
     const url = URL.createObjectURL(blob);
     console.log(url)
@@ -25,8 +26,7 @@ module.exports = function(app) {
     'https://eastus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Categories&language=en';
 
     const imageUrl =
-    'https://project003.blob.core.windows.net/whatthefruit-container/lemons-and-limes.jpg';
-    // Request parameters.
+    'https://project003.blob.core.windows.net/wtf/lemons-and-limes.jpg?sp=r&st=2019-07-18T02:09:01Z&se=2019-07-18T10:09:01Z&spr=https&sv=2018-03-28&sig=rus7DEQW%2FCoY4U9YJxLCyEMbCQHtNYg2W0yoTjxbssw%3D&sr=b';    // Request parameters.
     const params = {
         'visualFeatures': 'Categories,Description,Color',
         'details': '',
@@ -50,7 +50,7 @@ request.post(options, (error, response, body) => {
   }
   let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
   console.log('JSON Response\n');
-  console.log(jsonResponse);
+  console.log(req.body.url);
   res.json(jsonResponse)
 });
     // const  path = "." + req.body.fileName;

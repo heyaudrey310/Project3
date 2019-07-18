@@ -1,10 +1,15 @@
+
 import React from 'react';
 // import logo from '../../assets/images/lemons-and-limes.jpg'
 import '../../../src/App.css';
 import {  BrowserRouter as Router } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import Image from '../image/Image';
-import { Header } from '../Header/Header';
+// import { Header } from '../Header/Header';
+
+
+
+
 
 
 
