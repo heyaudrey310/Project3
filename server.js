@@ -36,6 +36,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes, both API and view
+
 require("./routes/apiRoutes")(app);
 require("./cors");
 // Routes
