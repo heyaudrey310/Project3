@@ -1,6 +1,5 @@
 
 import React from 'react';
-// import logo from '../../assets/images/lemons-and-limes.jpg'
 import '../../../src/App.css';
 import {  BrowserRouter as Router } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
@@ -28,7 +27,7 @@ function Home() {
           {/* <button className="btn btn-primary"><Link to="/image">Start Scanning Fruit</Link></button> */}
         </header>
         {/* <Header></Header> */}
-        <Image></Image>
+        {/* <Image></Image> */}
       </div>
     </Router>
   );

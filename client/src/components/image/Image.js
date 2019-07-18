@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../image/style.css";
 import API from "../../utils/api";
-import { arrayBufferToBlob } from "blob-util";
+// import { arrayBufferToBlob } from "blob-util";
 // import { canvasToBlob } from 'blob-util';
 
 

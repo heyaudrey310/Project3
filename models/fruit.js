@@ -30,8 +30,8 @@ const fruitSchema = new Schema({
   caffeine_100g:  {type: String, required:true }
   // recipe: String,
   // date: { type: Date, default: Date.now }
-});
-
+  
+}); 
 const Fruit = mongoose.model("Fruit", fruitSchema);
 
 module.exports = Fruit;

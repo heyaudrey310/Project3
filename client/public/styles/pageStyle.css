@@ -2,9 +2,11 @@
     width: 100%;
 }
 
+
+
 body{
 
-    background-image: url(../../assets/images/lemons-and-limes.jpg);
+    
     background-color: rgb(185, 179, 179);
     /* margin-bottom: 20%;  */
     height: 100%;
@@ -16,6 +18,41 @@ body{
     
     
 }
+#table{
+  margin-top:20%;
+  width: 60%;
+}
+
+/* 
+#customers {
+  margin: auto;
+  margin-top: 5%;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(92, 163, 204);
+  color: white;
+} */
+/* 88888888 */
 
 #camera--trigger{
     background-color: #FAC9B8;
@@ -41,6 +78,19 @@ body{
     font-size: 16px;
     margin-left: 5px;
 }
+
+/* 888888 */
+.card--body {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 40%;
+ 
+}
+
+
 #root{
     margin-top: 30%;
     text-align: center;
@@ -61,8 +111,22 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+/* .properties{
+  content: "";
+  clear: both;
+  display: table;
+} */
 
+/* .card--body{
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+} */
 
+tr{
+    z-index: -1;
+    color:orange;
+}
 .photos {
     margin: auto;
     margin-top: 60%;
@@ -75,12 +139,3 @@ h1{
     font-size:70px;
     margin:10%;
 }
-
-/* h2{
-font-size: 5px;
-z-index: -1;
-} */
-
-/* .button{
-     border-radius: 50%;
-} */

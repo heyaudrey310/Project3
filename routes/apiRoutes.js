@@ -1,5 +1,6 @@
 const request = require("request");
-require('dotenv').config()
+require('dotenv').config();
+const blobpolyfill = require("blob-polyfill")
 
 module.exports = function(app) {
   app.get("/api/getImage", (req, res) => {
@@ -14,10 +15,12 @@ module.exports = function(app) {
     console.log("In storeImage")
     const base64Data = req.body.imgBase64.replace(/^data:image\/jpeg;base64,/, "");
     const buf = Buffer.from(base64Data, 'base64');
-    const Blob = arrayBufferToBlob;
+    // const Blob = arrayBufferToBlob;
     const blob = new Blob([base64Data], {type: 'image/png'});
     const url = URL.createObjectURL(blob);
     console.log(url)
+
+    // canvas.toBlob();
     // console.log(base64Data);
 
     const subscriptionKey = process.env.REACT_APP_MICROSOFT_AZURE_API_KEY;
@@ -26,7 +29,7 @@ module.exports = function(app) {
     'https://eastus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Categories&language=en';
 
     const imageUrl =
-    'https://project003.blob.core.windows.net/wtf/lemons-and-limes.jpg?sp=r&st=2019-07-18T02:09:01Z&se=2019-07-18T10:09:01Z&spr=https&sv=2018-03-28&sig=rus7DEQW%2FCoY4U9YJxLCyEMbCQHtNYg2W0yoTjxbssw%3D&sr=b';    // Request parameters.
+    'http://localhost:3000/723cebdf-7382-42ec-933a-32589196059c';    // Request parameters.
     const params = {
         'visualFeatures': 'Categories,Description,Color',
         'details': '',
