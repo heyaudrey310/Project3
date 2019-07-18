@@ -4,9 +4,9 @@ import "../../../src/App.css";
 import { BrowserRouter as Router } from "react-router-dom";
 // import { Link } from 'react-router-dom';
 // import Image from '../image/Image';
-import ClickItem from "../clickItem";
+// import ClickItem from "../clickItem";
 // import Header from '../Header/Header';
-import fruit from "../../assets/fruit.json";
+// import fruit from "../../assets/fruit.json";
 function Home() {
   return (
     <Router>
@@ -15,7 +15,7 @@ function Home() {
         <header className="App-header">
           <div className="title">
             <h1>
-              {" "}
+              {/* {" "} */}
               What The <br />
               Fruit
             </h1>
@@ -24,17 +24,11 @@ function Home() {
           {/* fa fa camera button onclick to open image canvas */}
           {/* <button className="btn btn-primary"><Link to="/image">Start Scanning Fruit</Link></button> */}
         </header>
-        {/* {this.state.Fruit.map(item => (
-            <ClickItem
-              key={item.id}
-              id={item.id}
-              handleClick={this.handleItemClick}
-              image={item.image}
-            /> */}
-        {fruit.map(x => (
+        
+        {/* {fruit.map(x => (
           <li>{x.image}</li>
         ))}
-        <ClickItem />
+        <ClickItem /> */}
         {/* <Image></Image> */}
       </div>
     </Router>
