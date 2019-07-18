@@ -1,58 +1,102 @@
-const request = require("request");
-require('dotenv').config()
+//const request = require("request");
+ //require('dotenv').config();
+//const multer = require("multer");
+// const cloudUrl = 	'https://api.cloudinary.com/v1_1/dos8mkqbm/upload';
+// const cloudinary = require("cloudinary");
+// const cloudinaryStorage = require("multer-storage-cloudinary");
+// const cloudImage = {};
 
-module.exports = function(app) {
-  app.get("/api/getImage", (req, res) => {
-    console.log("In getImage")
-    res.json({
-      result: "getImage"
-    })
-  })
+// module.exports = function(app) {
+//   app.get("/api/getImage", (req, res) => {
+//     console.log("In getImage")
+//     res.json({
+//       result: "getImage"
+//     })
+//   })
+
+// cloudinary config
+// cloudinary.config({
+//   cloud_name: process.env.REACT_APP_CLOUD_NAME,
+//   api_key: process.env.REACT_APP_CLOUD_API_KEY,
+//   api_secret: process.env.REACT_APP_CLOUD_API_SECRET
+//   });
+
+//   const cloudinaryStorage = cloudinaryStorage({
+//   cloudinary: cloudinary,
+//   folder: "fruit",
+//   allowedFormats: ["jpg", "png", "jpeg"],
+//   transformation: [{ width: 500, height: 500, crop: "limit" }]
+//   });
+//     //storage of the file 
+//     const Storage = multer.diskStorage({
+//       destination: function (req, file, cb) {
+//         cb(null, "./uploads/");
+//       },
+//       filename: function (req, file, cb) {
+//         const writeFile = file.fieldname + Date.now().toString() + file.originalname;
+//         cb(null, writeFile);
+//       }
+//     });
+//   // makes it only acept photo files
+//     const fileFilter = (req, file, cb) => {
+//       if (file.mimetype === "image/jpeg" || file.mimetype === "image/png" || file.mimetype === "image/jpg") {
+//         cb(null, true);
+//       } else {
+//         cb(null, false);
+//          }
+//     }
+//     // mmulter disk storage
+//   const upload = multer({
+//     // storage: Storage,
+//     storage: cloudStorage,
+//     fileFilter
+//   });
 
 
-  app.post("/api/storeImage", (req, res) => {
-    console.log("In storeImage")
-    const base64Data = req.body.imgBase64.replace(/^data:image\/jpeg;base64,/, "");
-    const buf = Buffer.from(base64Data, 'base64');
-    const blob = new Blob([base64Data], {type: 'image/png'});
-    const url = URL.createObjectURL(blob);
-    console.log(url)
-    // console.log(base64Data);
 
-    const subscriptionKey = process.env.REACT_APP_MICROSOFT_AZURE_API_KEY;
-    console.log(subscriptionKey)
-    const uriBase =
-    'https://eastus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Categories&language=en';
+//   app.post("/api/storeImage", (req, res) => {
+//     console.log("In storeImage")
+//     const base64Data = req.body.imgBase64.replace(/^data:image\/jpeg;base64,/, "");
+//     const buf = Buffer.from(base64Data, 'base64');
+//     const blob = new Blob([base64Data], {type: 'image/png'});
+//     const url = URL.createObjectURL(blob);
+//     console.log(url)
+//     // console.log(base64Data);
 
-    const imageUrl =
-    'https://project003.blob.core.windows.net/whatthefruit-container/lemons-and-limes.jpg';
-    // Request parameters.
-    const params = {
-        'visualFeatures': 'Categories,Description,Color',
-        'details': '',
-        'language': 'en'
-    };
+//     const subscriptionKey = process.env.REACT_APP_MICROSOFT_AZURE_API_KEY;
+//     console.log(subscriptionKey)
+//     const uriBase =
+//     'https://eastus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Categories&language=en';
 
-  const options = {
-    uri: uriBase,
-    qs: params,
-    body: '{"url": ' + '"' + imageUrl + '"}',
-    headers: {
-        'Content-Type': 'application/json',
-        'Ocp-Apim-Subscription-Key' : subscriptionKey
-    }
-};
+//     const imageUrl =
+//     'https://project003.blob.core.windows.net/whatthefruit-container/lemons-and-limes.jpg';
+//     // Request parameters.
+//     const params = {
+//         'visualFeatures': 'Categories,Description,Color',
+//         'details': '',
+//         'language': 'en'
+//     };
 
-request.post(options, (error, response, body) => {
-  if (error) {
-    console.log('Error: ', error);
-    return;
-  }
-  let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
-  console.log('JSON Response\n');
-  console.log(jsonResponse);
-  res.json(jsonResponse)
-});
+//   const options = {
+//     uri: uriBase,
+//     qs: params,
+//     body: '{"url": ' + '"' + imageUrl + '"}',
+//     headers: {
+//         'Content-Type': 'application/json',
+//         'Ocp-Apim-Subscription-Key' : subscriptionKey
+//     }
+// };
+
+// request.post(options, (error, response, body) => {
+//   if (error) {
+//     console.log('Error: ', error);
+//     return;
+//   }
+//   let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
+//   console.log('JSON Response\n');
+//   console.log(jsonResponse);
+//   res.json(jsonResponse)
+// });
     // const  path = "." + req.body.fileName;
     // fs.writeFile(path, base64Data, "base64", function(err) {
     // if (err) {
@@ -65,8 +109,8 @@ request.post(options, (error, response, body) => {
 //npm pagckage uuid
 
 
-  })
-}
+//   });
+// };
 
 
 

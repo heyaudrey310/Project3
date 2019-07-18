@@ -3,8 +3,12 @@ import React from 'react';
 import '../../../src/App.css';
 import {  BrowserRouter as Router } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
-import Image from '../image/Image';
-import { Header } from '../Header/Header';
+// import Image from '../image/Image';
+import ClickItem from "../clickItem";
+import Header from '../Header/Header';
+import Fruit from "../../assets/fruit.json";
+
+
 
 
 
@@ -22,8 +26,17 @@ function Home() {
         {/* fa fa camera button onclick to open image canvas */}
           {/* <button className="btn btn-primary"><Link to="/image">Start Scanning Fruit</Link></button> */}
         </header>
-        {/* <Header></Header> */}
-        <Image></Image>
+        <Header></Header> 
+        {/* {this.state.Fruit.map(item => (
+            <ClickItem
+              key={item.id}
+              id={item.id}
+              handleClick={this.handleItemClick}
+              image={item.image}
+            /> */}
+        <Fruit></Fruit>
+        <ClickItem></ClickItem>
+        {/* <Image></Image> */}
       </div>
     </Router>
   );
