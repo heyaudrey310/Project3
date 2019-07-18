@@ -1,5 +1,7 @@
 import React from "react";
 import "./style.css";
+//import Fruit from "../../assets/fruit.json";
+
 
 function ClickItem(props) {
   return (
@@ -8,7 +10,7 @@ function ClickItem(props) {
       aria-label="click item"
       onClick={() => props.handleClick(props.id)}
       style={{ backgroundImage: `url("${props.image}")` }}
-      className={`click-item${props.shake ? " shake" : ""}`}
+    //   className={`click-item${props.shake ? " shake" : ""}`}
     />
   );
 }

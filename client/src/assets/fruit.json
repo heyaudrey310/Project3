@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "image": "/assets/images/orange.jpg",
+      "image": "./assets/images/orange",
       "clicked": false
     },
     {
