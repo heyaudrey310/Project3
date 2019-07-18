@@ -29,13 +29,13 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes, both API and view
-require("./routes/apiRoutes")(app);
+// require("./routes/apiRoutes")(app);
 
 // Routes
 // *************************************
 
 // require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+// require("./routes/htmlRoutes")(app);
 
 
 // Remember, Ed typed this....
