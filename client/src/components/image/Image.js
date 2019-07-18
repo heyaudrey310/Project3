@@ -56,27 +56,10 @@ class Image extends Component{
             // .then(res => this.setState({ image: res.data }))
             .catch(err => console.log(err));
             console.log("store")
-        // const canvas = window.canvas = document.querySelector('canvas');
-        // const data = canvas.toDataURL('image/png');
-        // push.document.querySelector("#camera--output").getAttribute("src")
-        
-        // handle image submit function 
-        // post
+       
     }
 
-    // convertBlob = (event) => {
-    //     const img = document.getElementById('kirby');
-    //     const blobUtil = 
-
-    //     blobUtil.imgSrcToBlob(img.src).then(function (blob) {
-    //     const blobURL = blobUtil.createObjectURL(blob);
-
-    //     const newImg = document.createElement('img');
-    //     newImg.src = blobURL;
-
-    //     img.parentNode.appendChild(newImg);
-    // });
-    // }
+  
 
     render (){
         return(
