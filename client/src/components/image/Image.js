@@ -68,19 +68,7 @@ import API from "../../utils/api";
 //         // post
 //     }
 
-    // convertBlob = (event) => {
-    //     const img = document.getElementById('kirby');
-    //     const blobUtil = 
-
-    //     blobUtil.imgSrcToBlob(img.src).then(function (blob) {
-    //     const blobURL = blobUtil.createObjectURL(blob);
-
-    //     const newImg = document.createElement('img');
-    //     newImg.src = blobURL;
-
-    //     img.parentNode.appendChild(newImg);
-    // });
-    // }
+  
 
     render (){
         return(

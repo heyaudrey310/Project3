@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import '../../../src/App.css';
 import {  BrowserRouter as Router } from 'react-router-dom';
@@ -34,7 +32,7 @@ function Home() {
 
         {/* <Header></Header> */}
 
-        {/* <Image></Image> */}
+        <Image></Image>
       </div>
     </Router>
   );
