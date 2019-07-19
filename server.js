@@ -64,8 +64,8 @@ app.use(bodyParser.json())
 
 app.use(express.static(path.join(__dirname, '..', 'public'))) 
 
-// cons(app)
-// routes(app)
+//cons(app)
+//routes(app)
 
 
 // Start the API server

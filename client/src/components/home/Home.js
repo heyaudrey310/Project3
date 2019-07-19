@@ -1,13 +1,16 @@
-import React from "react";
-// import logo from '../../assets/images/lemons-and-limes.jpg'
-import "../../../src/App.css";
-import { BrowserRouter as Router } from "react-router-dom";
-//import { Link } from 'react-router-dom';
-// import Image from '../image/Image';
-import ClickItem from "../clickItem";
-// import Header from '../Header/Header';
-import fruit from "../../assets/fruit.json";
-//import Background from "/styles/lemons-and-limes.jpg";
+import React from 'react';
+import '../../../src/App.css';
+import {  BrowserRouter as Router } from 'react-router-dom';
+ //import { Link } from 'react-router-dom';
+import Image from '../image/Image';
+ //import { Header } from '../Header/Header';
+
+
+
+
+
+
+
 
 function Home() {
   return (
@@ -23,15 +26,14 @@ function Home() {
               Fruit
             </h1>
           </div>
-          {/* <h1> What The Fruit</h1> */}
-          {/* fa fa camera button onclick to open image canvas */}
-          {/* <button className="btn btn-primary"><Link to="/image">Start Scanning Fruit</Link></button> */}
+           {/* <h1> What The Fruit</h1>  */}
+          {/* fa fa camera button onclick to open image canvas  */}
+           {/* <button className="btn btn-primary"><Link to="/image">Start Scanning Fruit</Link></button>  */}
         </header>
-        {fruit.map(x => (
-          <li>{x.image}</li>
-        ))}
-        <ClickItem />
-        {/* <Image></Image> */}
+
+        {/* <Header></Header> */}
+
+        <Image></Image>
       </div>
       
     </Router>
