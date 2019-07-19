@@ -52,7 +52,7 @@ app.get("*", (req, res) => {
 })
 
 // Connect to the Mongo DB
-// ****************************
+// ***********************************************
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://whatthefruit:Aa03101990*@ds249267.mlab.com:49267/heroku_3jw23km5"
