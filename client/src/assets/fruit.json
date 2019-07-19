@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "image": "./assets/images/orange",
+      "image": "/assets/images/orange",
       "clicked": false
     },
     {
@@ -11,7 +11,7 @@
     },
     {
       "id": 3,
-      "image": "assets/images/banana.jpg",
+      "image": "/assets/images/banana.jpg",
       "clicked": false
     },
     {

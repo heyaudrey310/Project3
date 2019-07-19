@@ -52,7 +52,7 @@ app.get("*", (req, res) => {
 })
 
 // Connect to the Mongo DB
-// ****************************
+// ***********************************************
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://whatthefruit:Aa03101990*@ds249267.mlab.com:49267/heroku_3jw23km5"
@@ -64,8 +64,8 @@ app.use(bodyParser.json())
 
 app.use(express.static(path.join(__dirname, '..', 'public'))) 
 
-// cons(app)
-// routes(app)
+//cons(app)
+//routes(app)
 
 
 // Start the API server

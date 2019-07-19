@@ -1,7 +1,7 @@
 
 const request = require("request");
 require('dotenv').config();
-const blobpolyfill = require("blob-polyfill")
+//const blobpolyfill = require("blob-polyfill")
 
 module.exports = function(app) {
   app.get("/api/getImage", (req, res) => {
@@ -97,4 +97,5 @@ request.post(options, (error, response, body) => {
 //   });
 
   
-
+  })
+} 
